@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Text, View, Button, StyleSheet} from 'react-native';
+import { Text, View,  StyleSheet} from 'react-native';
 import { connect } from "react-redux";
 import  {loginAction} from '../../store/rootAction';
+import { Button } from 'antd-mobile-rn';
 class Login extends Component {
     componentDidMount() {
 
@@ -32,11 +33,12 @@ class Login extends Component {
                 </Text>
                 <View style = {styles.bigButton}>
                     <Button
-                        onPress={this.login}
-                        title={loginState?"退出登陆":"立即登陆"}
-                        color="#fff"
+                        onPressIn={this.login}
                         accessibilityLabel="Learn more about this purple button"
-                    />
+                        type='primary'
+                    >
+                      {loginState?"退出登陆":"立即登陆"}
+                    </Button>
                 </View>
             </View>
         );
@@ -55,16 +57,7 @@ const mapDispatchToProps = (dispatch) => {
 };
 const styles = StyleSheet.create({
     bigButton: {
-        color: 'blue',
-        fontWeight: 'bold',
-        fontSize: 30,
-        width:100,
-        height:40,
-        textAlign:'center',
-        flexDirection:'row',
-        backgroundColor:'red',
-        alignItems:'center',
-        marginLeft:150,
+        margin:10
     },
     text: {
         color: 'red',
