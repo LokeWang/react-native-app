@@ -8,7 +8,7 @@ class Login extends Component {
 
     }
     login=()=>{
-        let {loginState} = this.props;
+        /* let {loginState} = this.props;
         if(loginState){
             this.props.dispatch({
                 type: loginAction.signOut,
@@ -17,7 +17,8 @@ class Login extends Component {
             this.props.dispatch({
                 type: loginAction.loginRequest,
             })
-        }
+        } */
+        this.props.navigation.navigate('Main');
     };
     render() {
         const {loginState} = this.props;
