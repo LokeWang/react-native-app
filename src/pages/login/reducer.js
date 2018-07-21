@@ -2,20 +2,14 @@ import  { loginAction } from '../../store/rootAction';
 let stateData = {
     loginState:false,
 };
-function mainPageReducer(state=stateData, action) {
-    if (action.type === loginAction.updateLoginState) {
-        console.log(action)
+function loginReducer(state=stateData, action) {
+    if(action.type === loginAction.updateLoginState) {
         return Object.assign({}, state, {
             loginState:action.payload.loginState
         });
-    } else if(action.type === loginAction.updateUseriInfo){
-        return Object.assign({},state,{
-            loginState:action.payload.loginState
-        });
-
-    } else {
+    }else {
         return state;
     }
 }
 
-export default mainPageReducer;
+export default loginReducer;

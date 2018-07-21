@@ -8,7 +8,7 @@ import {
 import HomeScreen from '../pages/home/index';
 import MassageScreen from '../pages/message/index';
 import MineScreen from '../pages/mine/index';
-import MyElectricityScreen from '../pages/home/myElectricity/index';
+import MyElectricityScreen from '../pages/myElectricity/index';
 import DetailsScreen from '../pages/message/details/index';
 import CompanyInforScreen from '../pages/mine/companyInfor/index';
 
