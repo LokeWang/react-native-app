@@ -5,10 +5,14 @@ import createSagaMiddleware from 'redux-saga';
 import rootReducer from './src/store/rootReducer';
 import { Provider } from "react-redux";
 import rootSaga from './src/store/rootSaga';
+import logger from 'redux-logger';
 const sagaMiddleware = createSagaMiddleware();
 const store = createStore(
     rootReducer,
-    applyMiddleware(sagaMiddleware)
+    applyMiddleware(
+        logger,
+        sagaMiddleware
+    )
 );
 sagaMiddleware.run(rootSaga);
 export default class Center extends Component {
