@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Navigator from './src/common/AppNavigation';
+import Navigator from './src/navigation/EnterNavigation';
 import { applyMiddleware, createStore } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import rootReducer from './src/store/rootReducer';

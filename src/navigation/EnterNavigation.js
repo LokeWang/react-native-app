@@ -1,6 +1,6 @@
 import React from 'react';
 import LoginScreen from "../pages/login/index";
-import MainScreen from './index';
+import MainScreen from './NavigationConfig';
 import { createStackNavigator } from "react-navigation";
 const Navigator = createStackNavigator(
   {
@@ -19,7 +19,7 @@ const Navigator = createStackNavigator(
       })
     },
   },{
-    initialRouteName: 'Main',
+    initialRouteName: 'Login',
   }
 )
 

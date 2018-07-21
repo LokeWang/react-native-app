@@ -12,14 +12,26 @@ import MyElectricityScreen from '../pages/home/myElectricity/index';
 import DetailsScreen from '../pages/message/details/index';
 import CompanyInforScreen from '../pages/mine/companyInfor/index';
 
+/* ---判断是否显示底部Tab--- */
+
+const visibleBottomTab = (navigation)=>{
+    if(navigation.state.index===1){
+        return {
+            tabBarVisible: false,
+        };
+    }
+    return {
+        tabBarVisible: true,
+    };
+};
 /* ---主页 StackNav注册--- */
 const HomeStack = createStackNavigator({
     Home: {
         screen: HomeScreen,
         key: 'Home',
-        navigationOptions: ({ navigation }) => ({
-            header: null
-        })
+        navigationOptions: ({ navigation }) => {
+            visibleBottomTab(navigation);
+        }
     },
 	Electricity: MyElectricityScreen,
 });
@@ -29,9 +41,9 @@ const MassageStack = createStackNavigator({
     Massage: {
         screen: MassageScreen,
         key: 'Massage',
-        navigationOptions: ({ navigation }) => ({
-            header: null
-        })
+        navigationOptions: ({ navigation }) => {
+            visibleBottomTab(navigation);
+        }
     },
 	Details: DetailsScreen,
 });
@@ -41,44 +53,12 @@ const MineStack = createStackNavigator({
     Mine: {
         screen: MineScreen,
         key: 'Mine',
-        navigationOptions: ({ navigation }) => ({
-            header: null
-        })
+        navigationOptions: ({ navigation }) => {
+            visibleBottomTab(navigation);
+        }
     },
     ComInf: CompanyInforScreen,
 });
-
-// TODO: 封装方法 隐藏nextPage tabbar
-HomeStack.navigationOptions = ({ navigation }) => {
-    if(navigation.state.index==1){
-        return {
-            tabBarVisible: false,
-        };
-    }
-    return {
-        tabBarVisible: true,
-    };
-};
-MassageStack.navigationOptions = ({ navigation }) => {
-    if(navigation.state.index==1){
-        return {
-            tabBarVisible: false,
-        };
-    }
-    return {
-        tabBarVisible: true,
-    };
-};
-MineStack.navigationOptions = ({ navigation }) => {
-    if(navigation.state.index==1){
-        return {
-            tabBarVisible: false,
-        };
-    }
-    return {
-        tabBarVisible: true,
-    };
-};
 
 export default createBottomTabNavigator(
 	{
