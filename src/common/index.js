@@ -5,14 +5,14 @@ import {
 } from 'react-navigation';
 
 /* ---pages--- */
-import HomeScreen from './home/index';
-import MassageScreen from './message/index';
-import MineScreen from './mine/index';
-import MyElectricityScreen from './home/myElectricity/index';
-import DetailsScreen from './message/details/index';
-import CompanyInforScreen from './mine/companyInfor/index';
+import HomeScreen from '../pages/home/index';
+import MassageScreen from '../pages/message/index';
+import MineScreen from '../pages/mine/index';
+import MyElectricityScreen from '../pages/home/myElectricity/index';
+import DetailsScreen from '../pages/message/details/index';
+import CompanyInforScreen from '../pages/mine/companyInfor/index';
 
-/* --- */
+/* ---主页 StackNav注册--- */
 const HomeStack = createStackNavigator({
     Home: {
         screen: HomeScreen,
@@ -24,6 +24,7 @@ const HomeStack = createStackNavigator({
 	Electricity: MyElectricityScreen,
 });
 
+/* ---消息 StackNav注册--- */
 const MassageStack = createStackNavigator({
     Massage: {
         screen: MassageScreen,
@@ -35,6 +36,7 @@ const MassageStack = createStackNavigator({
 	Details: DetailsScreen,
 });
 
+/* ---我的 StackNav注册--- */
 const MineStack = createStackNavigator({
     Mine: {
         screen: MineScreen,

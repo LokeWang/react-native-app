@@ -1,18 +1,8 @@
-
-
 import React from 'react';
 import LoginScreen from "../pages/login/index";
-import MainScreen from '../pages/index';
+import MainScreen from './index';
 import { createStackNavigator } from "react-navigation";
-
-/* import HomeScreen from '../screen/home/index';
-import MassageScreen from '../screen/message/index';
-import MineScreen from '../screen/mine/index';
-import MyElectricityScreen from '../screen/home/myElectricity/index';
-import DetailsScreen from '../screen/message/details/index';
-import CompanyInforScreen from '../screen/mine/companyInfor/index'; */
-
-export const Navigator = createStackNavigator(
+const Navigator = createStackNavigator(
   {
     Login: {
       screen: LoginScreen,
@@ -28,39 +18,9 @@ export const Navigator = createStackNavigator(
         header: null
       })
     },
-    /* Home: {
-      screen: HomeScreen,
-      key: 'Home',
-      navigationOptions: ({ navigation }) => ({
-        header: null
-      })
-    },
-    Massage: {
-      screen: MassageScreen,
-      key: 'Massage',
-      navigationOptions: ({ navigation }) => ({
-        header: null
-      })
-    },
-    Mine: {
-      screen: MineScreen,
-      key: 'Mine',
-      navigationOptions: ({ navigation }) => ({
-        header: null
-      })
-    }*/
   },{
-    initialRouteName: 'Login',
+    initialRouteName: 'Main',
   }
 )
-
-/* export default class AppNavigator extends React.Component{
-  
-  render(){
-    return (
-      <Navigator navigation={this.props.navigation} />
-    )
-  }
-} */
 
 export default Navigator;
